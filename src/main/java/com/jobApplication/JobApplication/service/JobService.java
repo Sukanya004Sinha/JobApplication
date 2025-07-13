@@ -1,6 +1,6 @@
 package com.jobApplication.JobApplication.service;
 
-import com.jobApplication.JobApplication.Controller.Job;
+import com.jobApplication.JobApplication.entity.Job;
 
 import java.util.List;
 

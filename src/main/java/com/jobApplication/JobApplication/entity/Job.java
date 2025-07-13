@@ -1,6 +1,13 @@
-package com.jobApplication.JobApplication.Controller;
+package com.jobApplication.JobApplication.entity;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name="job_table")
 public class Job {
+    public Job() {
+    }
+
     public Long getId() {
         return id;
     }
@@ -58,6 +65,9 @@ public class Job {
         Location = location;
     }
 
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
     private String description;

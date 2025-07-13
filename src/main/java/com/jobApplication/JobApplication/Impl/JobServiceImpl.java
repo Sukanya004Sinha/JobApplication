@@ -1,6 +1,6 @@
 package com.jobApplication.JobApplication.Impl;
 
-import com.jobApplication.JobApplication.Controller.Job;
+import com.jobApplication.JobApplication.entity.Job;
 import com.jobApplication.JobApplication.service.JobService;
 import org.springframework.stereotype.Service;
 
