@@ -3,7 +3,7 @@ package com.jobApplication.JobApplication.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="job_table")
+@Table(name="JOB")
 public class Job {
     public Job() {
     }
