@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 @RestController
+@RequestMapping("/jobs")
 public class JobController {
     private JobService jobService;
 
@@ -35,6 +36,23 @@ public class JobController {
        // return new Job(1L, "TestJob", "TestJob", "2000", "2000", "Bangalore ");
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 
+    }
+    @DeleteMapping("/jobs/{id}")
+    public ResponseEntity<String> deleteJobById(@PathVariable Long id) {
+        boolean deleted = jobService.deleteJobById(id);
+        if (deleted) {
+            return new ResponseEntity<>("Job deleted successfully", HttpStatus.OK);
+
+        }
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+    @PutMapping("/jobs/{id}")
+    //@RequestMapping(value = "/jobs/{id}", method = RequestMethod.PUT)
+    public ResponseEntity<String> updateJob(@PathVariable Long id, @RequestBody Job updatedJob){
+        boolean updated = jobService.updateJob(id, updatedJob);
+        if(updated)
+            return new ResponseEntity<>("Job updated successfully", HttpStatus.OK);
+        return  new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 }
 
