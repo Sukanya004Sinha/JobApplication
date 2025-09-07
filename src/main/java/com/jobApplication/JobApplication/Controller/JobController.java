@@ -1,5 +1,6 @@
 package com.jobApplication.JobApplication.Controller;
 
+import com.jobApplication.JobApplication.entity.Company;
 import com.jobApplication.JobApplication.entity.Job;
 import com.jobApplication.JobApplication.service.JobService;
 import org.springframework.http.HttpStatus;
@@ -24,6 +25,7 @@ public class JobController {
     @PostMapping
     public ResponseEntity<String> createJob(@RequestBody Job job){
         jobService.createJob(job);
+         // Company c = job.getCompany();
         //return "Job added Successfully";
         return new ResponseEntity<>("Job added Successfully", HttpStatus.OK);
     }

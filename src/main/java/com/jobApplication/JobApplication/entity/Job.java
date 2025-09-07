@@ -5,6 +5,22 @@ import jakarta.persistence.*;
 @Entity
 @Table(name="JOB")
 public class Job {
+    public void setCompany(Company company) {
+        this.company = company;
+    }
+
+    public Job(Company company, Long id, String title, String description, String minSalary, String maxSalary, String location) {
+        this.company = company;
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.minSalary = minSalary;
+        this.maxSalary = maxSalary;
+        Location = location;
+    }
+
+    @ManyToOne
+    private Company company;
     public Job() {
     }
 
@@ -56,14 +72,7 @@ public class Job {
         Location = location;
     }
 
-    public Job(Long id, String title, String description, String minSalary, String maxSalary, String location) {
-        this.id = id;
-        this.title = title;
-        this.description = description;
-        this.minSalary = minSalary;
-        this.maxSalary = maxSalary;
-        Location = location;
-    }
+
 
 
     @Id
@@ -74,4 +83,8 @@ public class Job {
     private String minSalary;
     private String maxSalary;
     private String Location;
+
+    public Company getCompany() {
+        return company;
+    }
 }
