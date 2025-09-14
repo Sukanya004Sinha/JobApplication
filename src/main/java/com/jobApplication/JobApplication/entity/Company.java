@@ -12,11 +12,22 @@ public class Company {
     private Long id;
     private String name;
     private String description;
+
+    public List<Review> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
+    }
+
     @JsonIgnore
     @OneToMany(mappedBy = "company")
     private List<Job> jobs;
 
-    // priavte List<Review> reviews;
+    @OneToMany(mappedBy = "company")
+    private List<Review>  reviews;
+
     public Company() {
     }
 

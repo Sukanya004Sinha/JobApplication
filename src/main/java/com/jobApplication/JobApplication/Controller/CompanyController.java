@@ -1,6 +1,7 @@
-package com.jobApplication.JobApplication.Controller.Company;
+package com.jobApplication.JobApplication.Controller;
 
 import com.jobApplication.JobApplication.entity.Company;
+import com.jobApplication.JobApplication.entity.Job;
 import com.jobApplication.JobApplication.service.CompanyService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -54,5 +55,6 @@ public class CompanyController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+
 
 }
